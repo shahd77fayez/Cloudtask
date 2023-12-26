@@ -1,1 +1,1 @@
-date
+systeminfo
