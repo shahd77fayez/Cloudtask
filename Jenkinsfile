@@ -8,13 +8,14 @@ pipeline {
                 git 'https://github.com/shahd77fayez/Cloudtask.git'
             }
         }
+
         stage('Execute Bash Script') {
             steps {
                 script {
-                    def output = bat(script: 'CommandCloudTask.sh', returnStdout: true).trim()
+                    def output = bat(script: 'CommandCloudTask.sh', returnStdout: true, encoding: 'UTF-8').trim()
                     echo "Script Output: ${output}"
                 }
             }
-        }
-    }
+        }
+    }
 }
